@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PHPUnit report</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <h1>PHPUnit report</h1>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div id="bubbles">
+                        <div>
+                            <h4 class="text-center" style="padding:50px;margin-left:100px;">
+                                Select file to load graph...
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div id="totals">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="suite-totals">
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-left">
+                        <input type='file' accept='text/xml' onchange='openFile(event)'>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-right">
+                        <a href="#" id="load_example">Load Example symfony.xml</a>
+                        &nbsp;|&nbsp;
+                        <a href="#" id="refresh_file_link">Reread Result File</a>
+                        &nbsp;|&nbsp;
+                        <a href="#" id="json_report_download_link">Download JSON report</a>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control" id="node-callback" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <h2>How to generate your own report?</h2>
+                    <p>
+                        To generate a report, simply execute your PHPUnit test suite including the
+                        <code>--log-junit</code> argument, such as:
+                    </p>
+                    <code>
+                        <pre>phpunit --log-junit report.xml</pre>
+                    </code>
+                    <p>
+                        Then upload the <code>report.xml</code> file
+                    </p>
+                    <br>
+                    <p>If you want to re-use this chart in your own application or parametrize it, you can find all
+                        technical details on the
+                        <a href="https://github.com/marmelab/phpunit-d3-report">README file</a>.</p>
+
+                    <h2>Licence</h2>
+                    <p>This project is released under the MIT licence (thanks to <a
+                           href="http://www.marmelab.com">Marmelab</a>. It means
+                        you can blow unlimited bubbles in all your projects, with the only obligation to embed the
+                        original licence file
+                        into your fork.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
