@@ -7,17 +7,18 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
+    <a href="https://github.com/marmelab/phpunit-d3-report"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
     <div class="content">
         <div class="container">
             <h1>PHPUnit report</h1>
             <p class="lead">This visualization tool provides a quick way to monitor your PHPUnit test suites. With a single glance, you will be able to identify the slowest tests, helping you to improve the overall execution time of your tests.</p>
 
             <p id="sample_introduction">Here is a sample of report this utility can generate. It is based on <a href="https://github.com/symfony/symfony/tree/2.3">Symfony 2.3</a> test suite:</p>
-            <div id="test_bubbles">
-                <p id="back">
-                    <a href="#" id="back_link">Back</a>
-                </p>
-            </div>
+
+            <div id="bubbles"></div>
+            <p class="text-right">
+                <a href="#" id="json_report_download_link">Download JSON report</a>
+            </p>
 
             <h2>How to generate your own report?</h2>
             <p>To generate a report, simply execute your PHPUnit test suite including the <code>--log-junit</code> argument, such as:</p>
@@ -32,25 +33,17 @@
                 </p>
             </form>
 
-            <h2>Installing the project locally</h2>
-            <p>If you want to install this project locally, simply clone the <a href="https://github.com/marmelab/phpunit-d3-report">GitHub repository</a> and install its Bower dependencies:</p>
-            <code>
-                <pre># Cloning repository
-git clone https://github.com/marmelab/phpunit-d3-report
-
-# Installing dependencies
-bower install</pre></code>
-            <p>Finally, simply open the file into your favorite browser. No need of any VirtualHost or other special configuration: all is done client-side.</p>
-            </code>
+            <p>If you want to re-use this chart in your own application or parametrize it, you can find all technical details on the <a href="https://github.com/marmelab/phpunit-d3-report">README file</a>.</p>
 
             <h2>Licence</h2>
-            <p>This <a href="http://www.marmelab.com">Marmelab</a> experiment, developed by <a href="http://www.jonathan-petitcolas.com">Jonathan Petitcolas</a>, is released under the MIT licence. It means you can blow unlimited bubbles in all your projects, with the only obligation to embed the original licence file into your fork.</p>
+            <p>This project is released under the MIT licence (thanks to <a href="http://www.marmelab.com">Marmelab</a>. It means you can blow unlimited bubbles in all your projects, with the only obligation to embed the original licence file into your fork.</p>
         </div>
     </div>
 
     <script src="bower_components/d3/d3.min.js"></script>
     <script src="bower_components/momentjs/min/moment.min.js"></script>
     <script src="js/report-transformer.js"></script>
+    <script src="js/d3.phpunitBubbles.js"></script>
     <script src="js/bubbles.js"></script>
 </body>
 </html>
